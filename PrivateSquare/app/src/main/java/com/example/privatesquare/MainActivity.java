@@ -1,5 +1,8 @@
 package com.example.privatesquare;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +12,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.Button;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -38,7 +42,22 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        Button b1=(Button)findViewById(R.id.SosButton);
+
+        b1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick (View v){
+                NotificationManager NM;
+                NM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                Notification notify = new Notification.Builder(getApplicationContext()).setContentTitle("Danger").setContentText("Your friend needs your help").setContentTitle("Help").build();
+                notify.flags |= Notification.FLAG_AUTO_CANCEL;
+                NM.notify(0, notify);
+            }
+        });
     }
+
 
     @Override
     public void onBackPressed() {
