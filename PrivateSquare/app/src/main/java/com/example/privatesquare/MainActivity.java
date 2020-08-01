@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        Button b1=(Button)findViewById(R.id.SosButton);
+        /*Button b1=(Button)findViewById(R.id.SosButton);
 
         b1.setOnClickListener(new View.OnClickListener()
         {
@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick (View v){
                 NotificationManager NM;
                 NM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                Notification notify = new Notification.Builder(getApplicationContext()).setContentTitle("Danger").setContentText("Your friend needs your help").setContentTitle("Help").build();
-                notify.flags |= Notification.FLAG_AUTO_CANCEL;
+                Notification notify = new Notification.Builder(getApplicationContext()).setContentTitle("Danger").setContentText("Your friend needs your help").setContentTitle("Help").setSmallIcon(R.drawable.ic_menu_send).build();
+                //notify.flags |= Notification.FLAG_AUTO_CANCEL;
                 NM.notify(0, notify);
             }
-        });
+        });*/
     }
 
 
