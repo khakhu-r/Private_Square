@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        /*Button b1=(Button)findViewById(R.id.SosButton);
+        Button b1=(Button)findViewById(R.id.SosButton);
 
         b1.setOnClickListener(new View.OnClickListener()
         {
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity
                 //notify.flags |= Notification.FLAG_AUTO_CANCEL;
                 NM.notify(0, notify);
             }
-        });*/
+        });
     }
 
 
