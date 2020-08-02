@@ -3,6 +3,7 @@ package com.example.privatesquare;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,6 +21,7 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,9 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
 
         /*Button b1=(Button)findViewById(R.id.SosButton);
 
@@ -97,9 +102,13 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+
         if (id == R.id.nav_home) {
-            // Handle the camera action
+            activityTwo();
+
         } else if (id == R.id.nav_gallery) {
+
+
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -114,5 +123,10 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    private void activityTwo(){
+        Intent intent= new Intent(MainActivity.this, Main2Activity.class);
+
+        startActivity(intent);
     }
 }
